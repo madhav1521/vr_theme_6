@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+
+/* General 
+--------------------------------------------------------------------------------------------------------*/
+* { outline: none; box-sizing: border-box;}
+/* .window-resizing *, body:not(.page-loaded) *{transition: none!important; } */
+html, body { min-width: 320px; min-height: 100vh; }
+body {margin: 0; font-size: 16px; line-height: 22px; font-family:-apple-system, BlinkMacSystemFont,'Ubuntu', sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;}
+
+a {transition: all 0.3s; color: #000; text-decoration: none; }
+a:hover { color: #999; text-decoration: none; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.2em;  }
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { display: block; }
+h1 {font-size: 40px;}
+h2 {font-size: 30px; } 
+h3 {font-size: 25px; }
+h4 {font-size: 22px; }
+h5 {font-size: 16px; }
+h6 {font-size: 15px; }
+
+input[type=text], input[type=email], input[type=password], textarea { -webkit-appearance: none; appearance: none; }
+::-webkit-input-placeholder { color: #000; }
+::-moz-placeholder { color: #000; }
+:-ms-input-placeholder { color: #000; }
+:-moz-placeholder { color: #000; }
+::-moz-focus-inner { border: 0; }
+select:-moz-focusring { color: transparent; text-shadow: 0 0 0 #000; }
+option:not(:checked) { color: black; }
+
+:root{
+    --primary:#59B997;
+    --secondary:#ADADAD;
+    --primarymain:#FFF3F4;
+    --orange:#F16C20;
+    --yellow:#EBC844;
+    --green:#A2B86C;
+}
+
+/* Login page starts
+--------------------------------------------------------------------------------------------------------------------------- */
+.login-container{background-color: var(--primary); background-position: center;background-size: cover; height:100vh;}
+.leftlogin{display: flex;flex-direction: column;justify-content: flex-start; flex-wrap: wrap; max-width: 100%;}
+.logo{max-width: max-content; margin-top: 50px; margin-left: 70px;margin-bottom: 54px;}
+.hero-image{position:relative; max-width: 100%;}
+
+/* .copyright{position: absolute; bottom: 0;left: 0;} */
