@@ -43,14 +43,32 @@ option:not(:checked) { color: black; }
     --primarymain:#FFF3F4;
     --orange:#F16C20;
     --yellow:#EBC844;
-    --green:#A2B86C;
+    --white:#FFFFFF;
 }
 
 /* Login page starts
 --------------------------------------------------------------------------------------------------------------------------- */
-.login-container{background-color: var(--primary); background-position: center;background-size: cover; height:100vh;}
-.leftlogin{display: flex;flex-direction: column;justify-content: flex-start; flex-wrap: wrap; max-width: 100%;}
-.logo{max-width: max-content; margin-top: 50px; margin-left: 70px;margin-bottom: 54px;}
-.hero-image{position:relative; max-width: 100%;}
-
-/* .copyright{position: absolute; bottom: 0;left: 0;} */
+.login-container{
+  background:linear-gradient(to right, var(--primary)0%,var(--primary)58.333%, var(--white)58.333%,var(--white)100%); 
+  background-position: center;background-size: cover; height:100vh;display: flex;align-items: center;}
+  .section{margin: auto; max-width: 1800px; display: flex;}
+.container{
+  background:linear-gradient(to right, var(--primary)0%,var(--primary) 100%); 
+  background-position: center;background-size: cover; height:100vh;display: flex;flex-direction: column; justify-content: center;}
+.container2{min-width: 652px;
+  background:linear-gradient(to right, var(--white)58%,var(--white)100%); 
+  background-position: center;background-size: cover; height:100vh;display: flex;flex-direction: column; justify-content: center;}
+/* .container{
+  background:linear-gradient(to right, var(--primary)0%,var(--primary) 58.333%, var(--white)58.333%,var(--white)100%); 
+  background-position: center;background-size: cover; height:100vh;display: flex;flex-direction: column; justify-content: center;} */
+  .cmp-heading
+.leftlogin{background: url(./Assets/Images/blur.png) no-repeat;position:relative;display: flex;flex-direction: column;justify-content: flex-start; flex-wrap: wrap; max-width: 100%;}
+.logo{max-width: max-content; margin-bottom: 54px;}
+.hero-image{ max-width: 100%;}
+/* .login-right{padding-right: 98px; padding-left:99px;} */
+.check-line{display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;}
+.footer{display: flex; justify-content: space-between;}
+/* .left-grid{position: relative;} */
+/* .right-grid{position: relative;} */
+.copy-right{bottom: 0;left: 0; margin-top: 40px;}
+.copy-left{bottom: -160px;right: 123px;margin-top: 20px;}

@@ -15,10 +15,12 @@ import {
   Typography,
   Link,
   Input,
+  FormControlLabel,
+  Checkbox,
 } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { CheckBox, Visibility, VisibilityOff } from "@mui/icons-material";
 import { brand_logo, hero_image } from "../Assets/Images/image";
 
 export default function Login() {
@@ -41,81 +43,196 @@ export default function Login() {
   };
   return (
     <>
-      <React.Fragment>
-        <CssBaseline />
+      {/* <React.Fragment>
+        <CssBaseline /> */}
+      <Box className="login-container">
+        <Box className="section">
+          <Container maxWidth="xl" className="container">
 
-        <Grid container className="login-container">
-          <Grid item xs={12} md={6}>
-            <Box className="leftlogin">
-              <Box ><img src={brand_logo} alt="logo" className="logo" /></Box>
-              <Box className="login-img" ><img src={hero_image} alt="hero-image" className="hero-image" /></Box>
-              <Typography component="h6" variant="body1" className="copyright">
-               © 2021 Company. All Rights Reserved. 
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={6} className="login-right">
-            <Typography variant="h1" component="h2" className="login-heading">
-              Welcome Back!
-            </Typography>
-            <Typography variant="h5" component="h3" className="subheading">
-              Login into your account
-            </Typography>
-
-            <Grid container className="login-name">
-              <Grid item xs={11} sm={10} marginBottom="26px">
-                <TextField label="Username" type="text" autoFocus />
+            <Grid container maxWidth="lg" className="left-grid">
+              <Grid item xs={12}>
+                {/* <Box className="cmp-heading"> */}
+                <img src={brand_logo} alt="logo" className="logo" />
+                {/* </Box> */}
               </Grid>
-              <Grid item xs={11} sm={10} marginBottom="30px">
-                <FormControl variant="standard">
-                  <InputLabel htmlFor="outlined-adornment-password">
-                    Password
-                  </InputLabel>
-                  <Input
-                    id="outlined-adornment-password"
-                    type={showPassword ? "text" : "password"}
-                    endAdornment={
-                      <InputAdornment position="end">
-                        <IconButton
-                          aria-label="toggle password visibility"
-                          onClick={handleClickShowPassword}
-                          onMouseDown={handleMouseDownPassword}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    }
-                  />
-                </FormControl>
+              <Grid item xs={12} md={12}>
+                <Box className="leftlogin">
+                  {/* <img src={brand_logo} alt="logo" className="logo" /> */}
+                  <img src={hero_image} alt="hero-image" className="hero-image" />
+                  {/* <Typography
+                  component="h6"
+                  variant="body1"
+                  className="copyright"
+                >
+                  © 2021 Company. All Rights Reserved.
+                </Typography> */}
+                </Box>
               </Grid>
-            </Grid>
-
-            <Box className="btn-line">
-              <Button
-                type="submit"
-                disableElevation
-                variant="contained"
-                className="login-btn"
-                onClick={() => {
-                  navigate("/dashboard");
-                }}
-              >
-                <Typography variant="body1" component="span" className="login">
-                  Login
+              {/* <Box className="footer"> */}
+              <Grid item xs={12} md={12}>
+                <Typography variant="body1" component="h6" className="copy-right copyright">
+                  © 2021 Company. All Rights Reserved.
                 </Typography>
-              </Button>
-              <Link href="#" className="fp">
-                Forgot Password?
-              </Link>
-            </Box>
+                </Grid>
+                {/* <Typography variant="body1" component="h6" className="copy-left copyright">
+                  Privacy Policy        Terms and Condition        Help
+                </Typography> */}
+              {/* </Box> */}
 
-            <Typography variant="body1" component="h6" className="reg-here">
-              Are you a new Member? <Link href="#">Register here</Link>
-            </Typography>
-          </Grid>
-        </Grid>
-      </React.Fragment>
+
+
+              {/* <Grid item xs={12} md={5} alignItems="center" display="flex" >
+              <Box className="login-right">
+                <Typography variant="h4" component="h2" className="login-heading">
+                  Welcome Back!
+                </Typography>
+                <Typography variant="h5" component="h3" className="subheading">
+                  Login into your account
+                </Typography>
+
+                <Grid container rowSpacing={1} className="login-name">
+                  <Grid item xs={12} >
+                    <TextField label="Username" variant="standard" type="text" autoFocus />
+                  </Grid>
+                  <Grid item xs={12} marginBottom="29px">
+                    <FormControl variant="standard">
+                      <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                      <Input
+                        id="standard-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                            >
+                              {showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                          </InputAdornment>
+                        }
+                      />
+                    </FormControl>
+                  </Grid>
+                </Grid>
+
+                <Box className="check-line">
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Remember me"
+                  />
+                  <Link href="#" className="fp">
+                    Forgot Password?
+                  </Link>
+                </Box>
+                <Button
+                  fullWidth
+                  type="submit"
+                  disableElevation
+                  variant="contained"
+                  className="login-btn"
+                  onClick={() => {
+                    navigate("/dashboard");
+                  }}
+                >
+                  Login
+                </Button>
+
+                <Typography variant="body1" component="h6" className="reg-here">
+                  Don’t have an account? <Link href="#" className="sign-up">Sign up</Link>
+                </Typography>
+
+              </Box>
+            </Grid> 
+
+             <Grid item xs={12}>
+              <Box className="footer">
+                <Typography variant="body1" component="h6" className="copy-right copyright">
+                  © 2021 Company. All Rights Reserved.
+                </Typography>
+                <Typography variant="body1" component="h6" className="copy-left copyright">
+                  Privacy Policy        Terms and Condition        Help
+                </Typography>
+              </Box>
+            </Grid> */}
+            </Grid>
+          </Container>
+          <Container maxWidth="lg" className="container2">
+            <Grid container maxWidth="lg" className="right-grid">
+            <Grid item xs={12}  justifyContent='center' alignItems="center" display="flex" >
+              <Box className="login-right">
+                <Typography variant="h4" component="h2" className="login-heading">
+                  Welcome Back!
+                </Typography>
+                <Typography variant="h5" component="h3" className="subheading">
+                  Login into your account
+                </Typography>
+
+                <Grid container rowSpacing={1} className="login-name">
+                  <Grid item xs={12} >
+                    <TextField label="Username" variant="standard" type="text" autoFocus />
+                  </Grid>
+                  <Grid item xs={12} marginBottom="29px">
+                    <FormControl variant="standard">
+                      <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                      <Input
+                        id="standard-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        endAdornment={
+                          <InputAdornment position="end">
+                            <IconButton
+                              aria-label="toggle password visibility"
+                              onClick={handleClickShowPassword}
+                              onMouseDown={handleMouseDownPassword}
+                            >
+                              {showPassword ? <VisibilityOff /> : <Visibility />}
+                            </IconButton>
+                          </InputAdornment>
+                        }
+                      />
+                    </FormControl>
+                  </Grid>
+                </Grid>
+
+                <Box className="check-line">
+                  <FormControlLabel
+                    control={<Checkbox />}
+                    label="Remember me"
+                  />
+                  <Link href="#" className="fp">
+                    Forgot Password?
+                  </Link>
+                </Box>
+                <Button
+                  fullWidth
+                  type="submit"
+                  disableElevation
+                  variant="contained"
+                  className="login-btn"
+                  onClick={() => {
+                    navigate("/dashboard");
+                  }}
+                >
+                  Login
+                </Button>
+
+                <Typography variant="body1" component="h6" className="reg-here">
+                  Don’t have an account? <Link href="#" className="sign-up">Sign up</Link>
+                </Typography>
+
+              </Box>
+            </Grid>
+            <Grid item xs={12} >
+            <Typography variant="body1" component="h6" className="copy-left copyright">
+                  Privacy Policy        Terms and Condition        Help
+                </Typography>
+                </Grid>
+                </Grid>
+          </Container>
+
+        </Box>
+
+      </Box>
     </>
   );
 }
