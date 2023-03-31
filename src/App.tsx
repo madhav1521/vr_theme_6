@@ -3,13 +3,13 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
-import Innerpage from "./Pages/Innerpage";
 import Maintenance from "./Pages/Maintenance";
 import Offer from "./Pages/Offer";
 import Sales from "./Pages/Sales";
 import Setting from "./Pages/Setting";
 import { ThemeProvider } from "@mui/material";
 import { mobileTheme } from "./mobileTheme";
+import Users from "./Pages/Users";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login></Login>} />
             <Route path="/dashboard" element={<Dashboard></Dashboard>} />
-            <Route path="/innerpage" element={<Innerpage></Innerpage>} />
+            <Route path="/users" element={<Users></Users>} />
             <Route path="/maintenance" element={<Maintenance></Maintenance>} />
             <Route path="/offer" element={<Offer></Offer>} />
             <Route path="/sales" element={<Sales></Sales>} />

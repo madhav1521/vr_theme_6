@@ -4,10 +4,13 @@ const secondary = '#4B4B4B';
 const secondaryMain = '#424242';
 const secondaryLight = '#9C9C9C';
 const grey = '#E9E9E9';
+const whiteLight = '#EAEAEA';
+const greyLight = '#FAFAFA';
 const primary = "#59B997";
 const primaryLight = "#FFF3F4";
 const black = '#000000';
 const white = "#FFFFFF";
+
 
 export const mobileTheme = createTheme({
   palette: {
@@ -44,6 +47,11 @@ export const mobileTheme = createTheme({
             lineHeight:"56px",
             color:secondaryMain,
             marginBottom:"12px",
+            "@media (max-width:599px)":{
+              fontSize:"38px",
+            fontWeight:"500",
+            lineHeight:"42px",
+            }
           },
           "&.subheading":{
             fontSize:"20px",
@@ -56,15 +64,39 @@ export const mobileTheme = createTheme({
             textAlign:"center",
             color:secondaryMain,
           },
-          "&.copy-right":{
+          "&.copy-left":{
+            position:"absolute",
+            bottom:"0px",
+            left:"0",
             fontSize:"15px",
             fontWeight:"400",
             color:white,
           },
-          "&.copy-left":{
+          "&.copy-right":{
             fontSize:"15px",
             fontWeight:"400",
             color:secondaryLight,
+            position:"absolute",
+            bottom:"0px",
+            right:"0px",
+          },
+          "&.text-default":{
+            fontSize:"15px",
+            fontWeight:"400",
+            lineHeight:"18px",
+            color:white,
+            marginLeft:"10px",
+          },
+          "&.profile-name":{
+            fontSize:"16px",
+            fontWeight:"400",
+            lineHeight:"20px",
+            color:secondary,
+            textTransform:"Capitalize",
+            margin:"0 10px",
+            "@media (max-width:899px)":{
+              display:"none",
+            },
           },
         },
       },
@@ -72,13 +104,13 @@ export const mobileTheme = createTheme({
     MuiLink:{
       styleOverrides:{
         root:{
-          "&.hover": {
+          "&:hover": {
             color:black,
           },
-          "&.focus": {
+          "&:focus": {
             color:black,
           },
-          "&.active": {
+          "&:active": {
             color:black,
           },
           "&.fp":{
@@ -112,6 +144,87 @@ export const mobileTheme = createTheme({
           borderRadius:"10px",
           marginBottom:"30px",
           },
+          "&.toggle-btn, &.bell-btn":{
+            padding:"11px 14px",
+            border:"1px solid" + whiteLight,
+            borderRadius:"10px",
+            minWidth:"52px",
+            height:"47px",
+            "&:hover": {
+              borderColor:primary,
+            },
+            "&:focus": {
+              borderColor:primary,
+            },
+            "&:active": {
+              borderColor:primary,
+            },
+            
+          },
+          "&.chat-btn":{
+            padding:"11px 14px",
+            border:"1px solid" + whiteLight,
+            borderRadius:"10px",
+            minWidth:"52px",
+            margin:"0 20px",
+            "&:hover": {
+              borderColor:primary,
+            },
+            "&:focus": {
+              borderColor:primary,
+            },
+            "&:active": {
+              borderColor:primary,
+            },
+            "@media (max-width:1199px)":{
+              margin:"0 10px",
+            },
+          },
+          "&.search-btn":{
+            display:"none",
+            "@media (max-width:899px)":{
+              display:"flex",
+              padding:"13.5px 16px",
+              border:"1px solid" + whiteLight,
+              borderRadius:"10px",
+              minWidth:"52px",
+              "&:hover": {
+                borderColor:primary,
+              },
+              "&:focus": {
+                borderColor:primary,
+              },
+              "&:active": {
+                borderColor:primary,
+              },
+
+            },
+          },
+          "&.menu":{
+            backgroundColor:"transparent",
+            height:"58px",
+            margin:"0 30px",
+            padding:"10px",
+            position:"relative",
+            "&:hover": {
+              backgroundColor:grey,
+            },
+            "&:focus": {
+              backgroundColor:grey,
+            },
+            "&:active": {
+              backgroundColor:grey,
+            },
+            "@media (max-width:1199px)":{
+              margin:"0 10px 0 20px",
+            },
+          },
+          "&.btn-close-search":{
+            ".MuiSvgIcon-root":{
+              width:"30px",
+              height:"30px",
+            }
+          }
         },
       },
     },
@@ -171,6 +284,6 @@ export const mobileTheme = createTheme({
         },
       },
     },
-    
+  
 },
 });

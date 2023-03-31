@@ -21,7 +21,7 @@ import {
 import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router";
 import { CheckBox, Visibility, VisibilityOff } from "@mui/icons-material";
-import { brand_logo, hero_image } from "../Assets/Images/image";
+import { brand_logo, colored_logo, hero_image } from "../Assets/Images/image";
 
 export default function Login() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -70,7 +70,7 @@ export default function Login() {
               </Grid>
               {/* <Box className="footer"> */}
               <Grid item xs={12} md={12}>
-                <Typography variant="body1" component="h6" className="copy-right copyright">
+                <Typography variant="body1" component="h6" className="copy-left copyright">
                   © 2021 Company. All Rights Reserved.
                 </Typography>
                 </Grid>
@@ -161,6 +161,7 @@ export default function Login() {
             <Grid container maxWidth="lg" className="right-grid">
             <Grid item xs={12}  justifyContent='center' alignItems="center" display="flex" >
               <Box className="login-right">
+                <img src={colored_logo} alt="brand" className="colored-brand" />
                 <Typography variant="h4" component="h2" className="login-heading">
                   Welcome Back!
                 </Typography>
@@ -223,7 +224,7 @@ export default function Login() {
               </Box>
             </Grid>
             <Grid item xs={12} >
-            <Typography variant="body1" component="h6" className="copy-left copyright">
+            <Typography variant="body1" component="h6" className="copy-right copyright">
                   Privacy Policy        Terms and Condition        Help
                 </Typography>
                 </Grid>
