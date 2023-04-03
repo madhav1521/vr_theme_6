@@ -22,3 +22,15 @@ export const pic_1 = require ("./pic-1.png")
 export const pic_2 = require ("./pic-2.png")
 export const pic_3 = require ("./pic-3.png")
 export const pic_4 = require ("./pic-4.png")
+
+export const key = require ("./key.svg").default
+export const product = require ("./pro-chart.svg").default
+export const wallet = require ("./wallet.svg").default
+export const coin = require ("./coin-stack.svg").default
+
+export const upload_icon = require('./upload-ic.svg') .default
+export const error = require('./ic-error.svg') .default
+export const info = require('./ic-info.svg') .default
+export const valid = require('./ic-success.svg') .default
+export const warn = require('./ic-warn.svg') .default
+export const select_arrow = require('./select-arrow.svg') .default

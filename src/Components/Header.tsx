@@ -1,4 +1,4 @@
-import { Box, Button, Menu, MenuItem, MenuProps, SelectChangeEvent, Typography, styled } from '@mui/material'
+import { Box, Button, Link, Menu, MenuItem, MenuProps, SelectChangeEvent, Typography, styled } from '@mui/material'
 import React from 'react'
 import { brand_icon, colored_logo, dropdown_arrow, message, notification, profile, searchicon, toggle } from '../Assets/Images/image'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
@@ -67,7 +67,7 @@ export default function Header() {
           <Button variant='outlined' className='toggle-btn' onClick={togglebtn} >
             <img src={toggle} alt="toggle-button" />
           </Button>
-          <img src={brand_icon} alt="logo" className='cmp-icon' onClick={() => { navigate("/"); }} />
+          <Link ><img src={brand_icon} alt="logo" className='cmp-icon' onClick={() => { navigate("/"); }} /></Link>
           <img src={colored_logo} alt="logo" className='cmp-logo' onClick={() => { navigate("/"); }} />
         </Box>
 
@@ -85,9 +85,37 @@ export default function Header() {
           <Button variant='outlined' className='chat-btn'>
             <img src={message} alt="chat-button" />
           </Button>
-          <Button variant='outlined' className='bell-btn'>
+          <Button id="demo-customized-button"
+            aria-controls={open ? 'demo-customized-menu' : undefined}
+            aria-haspopup="true"
+            aria-expanded={open ? 'true' : undefined}
+            disableElevation
+            onClick={handleClick}
+            variant='outlined' 
+            className=' bell-btn'>
             <img src={notification} alt="notification-button" />
           </Button>
+          <StyledMenu
+            id="demo-customized-menu"
+            MenuListProps={{
+              'aria-labelledby': 'demo-customized-button',
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            className="menu-list"
+          >
+            <MenuItem onClick={handleClose} disableRipple>
+              My Profile
+            </MenuItem>
+            <MenuItem onClick={handleClose} disableRipple>
+              Help
+            </MenuItem>
+
+            <MenuItem onClick={() => { navigate('/'); }} disableRipple>
+              Logout
+            </MenuItem>
+          </StyledMenu>
           
           {/*   menu profile
                 --------------------------------------------------------------------------------------------------------------------------- */}
