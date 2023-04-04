@@ -91,7 +91,7 @@ export default function Header() {
             aria-expanded={open ? 'true' : undefined}
             disableElevation
             onClick={handleClick}
-            variant='outlined' 
+            variant='outlined'
             className=' bell-btn'>
             <img src={notification} alt="notification-button" />
           </Button>
@@ -116,7 +116,7 @@ export default function Header() {
               Logout
             </MenuItem>
           </StyledMenu>
-          
+
           {/*   menu profile
                 --------------------------------------------------------------------------------------------------------------------------- */}
           <Button
@@ -129,9 +129,10 @@ export default function Header() {
             onClick={handleClick}
             className="menu"
           >
-            <img alt="" src={profile} className="profile-pic"/>
+
+            <img alt="" src={profile} className="profile-pic" />
             <Typography component="h5" variant="body1" className="profile-name">
-              Jhon Doe
+              John Doe
             </Typography>
             <img src={dropdown_arrow} alt="arrow" className='profile-arrow' />
 
@@ -146,6 +147,7 @@ export default function Header() {
             onClose={handleClose}
             className="menu-list"
           >
+            
             <MenuItem onClick={handleClose} disableRipple>
               My Profile
             </MenuItem>

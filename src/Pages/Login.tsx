@@ -49,13 +49,13 @@ export default function Login() {
         <Box className="section">
           <Container maxWidth="xl" className="container">
 
-            <Grid container maxWidth="lg" className="left-grid">
-              <Grid item xs={12}>
+            <Grid container maxWidth="xl" >
+              <Grid item xs={12} className="left-grid">
                 {/* <Box className="cmp-heading"> */}
                 <img src={brand_logo} alt="logo" className="logo" />
                 {/* </Box> */}
               </Grid>
-              <Grid item xs={12} md={12}>
+              <Grid item xs={12} md={7}>
                 <Box className="leftlogin">
                   {/* <img src={brand_logo} alt="logo" className="logo" /> */}
                   <img src={hero_image} alt="hero-image" className="hero-image" />
@@ -69,24 +69,26 @@ export default function Login() {
                 </Box>
               </Grid>
               {/* <Box className="footer"> */}
-              <Grid item xs={12} md={12}>
+              {/* <Grid item xs={12} md={12}>
                 <Typography variant="body1" component="h6" className="copy-left copyright">
                   © 2021 Company. All Rights Reserved.
                 </Typography>
-                </Grid>
+                </Grid> */}
                 {/* <Typography variant="body1" component="h6" className="copy-left copyright">
                   Privacy Policy        Terms and Condition        Help
                 </Typography> */}
               {/* </Box> */}
+              {/* </Grid> */}
 
 
 
-              {/* <Grid item xs={12} md={5} alignItems="center" display="flex" >
+              <Grid item xs={12} md={5} alignItems="center" justifyContent="end" display="flex" className="right-grid">
               <Box className="login-right">
-                <Typography variant="h4" component="h2" className="login-heading">
+                <img src={colored_logo} alt="brand" className="colored-brand" />
+                <Typography variant="h1" component="h1" className="login-heading">
                   Welcome Back!
                 </Typography>
-                <Typography variant="h5" component="h3" className="subheading">
+                <Typography variant="h5" component="h4" className="subheading">
                   Login into your account
                 </Typography>
 
@@ -154,10 +156,10 @@ export default function Login() {
                   Privacy Policy        Terms and Condition        Help
                 </Typography>
               </Box>
-            </Grid> */}
+            </Grid>
             </Grid>
           </Container>
-          <Container maxWidth="lg" className="container2">
+          {/* <Container maxWidth="lg" className="container2">
             <Grid container maxWidth="lg" className="right-grid">
             <Grid item xs={12}  justifyContent='center' alignItems="center" display="flex" >
               <Box className="login-right">
@@ -229,7 +231,7 @@ export default function Login() {
                 </Typography>
                 </Grid>
                 </Grid>
-          </Container>
+          </Container> */}
 
         </Box>
 

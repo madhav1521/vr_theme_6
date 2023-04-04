@@ -44,15 +44,15 @@ export default function Dashboard() {
               {/* page-heading
               ------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} >
-                <Typography component="h3" variant='h4' className='page-title'>Dashboard</Typography>
+                <Typography component="h3" variant='h3' className='page-title'>Dashboard</Typography>
               </Grid>
               {/* card
               ------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} sm={6} md={3} >
                 <Card className='sticker chart-card' elevation={0}>
                   <Box className="left-card">
-                    <Typography component="h6" variant="h5" className='nums'>6387 </Typography>
-                    <Typography component="h6" variant="body1" className="stats">Property Sold</Typography>
+                    <Typography component="h4" variant="h3" className='nums'>6387 </Typography>
+                    <Typography variant="body1" className="stats">Property Sold</Typography>
                   </Box>
                   <Box className='right-card' >
                     <img src={product} alt="product-chart" />
@@ -62,8 +62,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} md={3} >
                 <Card className='sticker wallet-card' elevation={0}>
                   <Box className="left-card">
-                    <Typography component="h6" variant="h5" className='nums'>$9,712 </Typography>
-                    <Typography component="h6" variant="body1" className="stats">Income</Typography>
+                    <Typography component="h4" variant="h3" className='nums'>$9,712 </Typography>
+                    <Typography variant="body1" className="stats">Income</Typography>
                   </Box>
                   <Box className='right-card' >
                     <img src={wallet} alt="wallet" />
@@ -73,8 +73,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} md={3} >
                 <Card className='sticker stack-card' elevation={0}>
                   <Box className="left-card">
-                    <Typography component="h6" variant="h5" className='nums'>965 </Typography>
-                    <Typography component="h6" variant="body1" className="stats">Expense</Typography>
+                    <Typography component="h4" variant="h3" className='nums'>965 </Typography>
+                    <Typography variant="body1" className="stats">Expense</Typography>
                   </Box>
                   <Box className='right-card' >
                     <img src={coin} alt="coins" />
@@ -84,8 +84,8 @@ export default function Dashboard() {
               <Grid item xs={12} sm={6} md={3} >
                 <Card className='sticker key-card' elevation={0}>
                   <Box className="left-card">
-                    <Typography component="h6" variant="h5" className='nums'>$8,723 </Typography>
-                    <Typography component="h6" variant="body1" className="stats">Property Rented</Typography>
+                    <Typography component="h4" variant="h3" className='nums'>$8,723 </Typography>
+                    <Typography variant="body1" className="stats">Property Rented</Typography>
                   </Box>
                   <Box className='right-card' >
                     <img src={key} alt="key" />
@@ -97,10 +97,10 @@ export default function Dashboard() {
               <Grid item xs={12} lg={7} >
                 <Card className='report-cards' elevation={0}>
                   <Box className="card-heading">
-                    <Typography component="h6" variant="h5" className='card-head'>Weekly Report </Typography>
+                    <Typography component="h5" variant="h5" className='card-head'>Weekly Report </Typography>
                     <Box className='weeks'>
-                      <Typography component="h6" variant="body1" className="current">This week</Typography>
-                      <Typography component="h6" variant="body1" className="past">last week</Typography>
+                      <Typography variant="body1" className="current">This week</Typography>
+                      <Typography variant="body1" className="past">last week</Typography>
                     </Box>
                   </Box>
                   <Box className='graph-content' >
@@ -121,48 +121,48 @@ export default function Dashboard() {
                       <Box className='left-profile' >
                         <img src={pic_1} alt="key" className='profile-image img-fluid' />
                         <Box className='profile-stats' >
-                          <Typography component="h6" variant="body2" className="names">Devon Lane</Typography>
-                          <Typography component="h6" variant="body2" className="dates">March 23, 2013</Typography>
+                          <Typography component='p' variant="body2" className="names">Devon Lane</Typography>
+                          <Typography component='span' variant="body2" className="dates">March 23, 2013</Typography>
                         </Box>
                       </Box>
                       <Box className='right-profile' >
-                        <Typography component="h6" variant="h5" className="earnings success">+ $600</Typography>
+                        <Typography component="h5" variant="h5" className="earnings success">+ $600</Typography>
                       </Box>
                     </Box>
                     <Box className='profile-content' >
                       <Box className='left-profile' >
                         <img src={pic_2} alt="key" className='profile-image img-fluid' />
                         <Box className='profile-stats' >
-                          <Typography component="h6" variant="body2" className="names">Bessie Cooper</Typography>
-                          <Typography component="h6" variant="body2" className="dates">May 31, 2015</Typography>
+                          <Typography component='p' variant="body2" className="names">Bessie Cooper</Typography>
+                          <Typography component='span' variant="body2" className="dates">May 31, 2015</Typography>
                         </Box>
                       </Box>
                       <Box className='right-profile' >
-                        <Typography component="h6" variant="h5" className="earnings failure">- $400</Typography>
+                        <Typography component="h5" variant="h5" className="earnings failure">- $400</Typography>
                       </Box>
                     </Box>
                     <Box className='profile-content' >
                       <Box className='left-profile' >
                         <img src={pic_3} alt="key" className='profile-image img-fluid' />
                         <Box className='profile-stats' >
-                          <Typography component="h6" variant="body2" className="names">Guy Hawkins</Typography>
-                          <Typography component="h6" variant="body2" className="dates">October 31, 2017</Typography>
+                          <Typography component='p' variant="body2" className="names">Guy Hawkins</Typography>
+                          <Typography component='span' variant="body2" className="dates">October 31, 2017</Typography>
                         </Box>
                       </Box>
                       <Box className='right-profile' >
-                        <Typography component="h6" variant="h5" className="earnings success">+ $200</Typography>
+                        <Typography component="h5" variant="h5" className="earnings success">+ $200</Typography>
                       </Box>
                     </Box>
                     <Box className='profile-content' >
                       <Box className='left-profile' >
                         <img src={pic_4} alt="key" className='profile-image img-fluid' />
                         <Box className='profile-stats' >
-                          <Typography component="h6" variant="body2" className="names">Kathryn Murphy</Typography>
-                          <Typography component="h6" variant="body2" className="dates">December 2, 2018</Typography>
+                          <Typography component='p' variant="body2" className="names">Kathryn Murphy</Typography>
+                          <Typography component='span' variant="body2" className="dates">December 2, 2018</Typography>
                         </Box>
                       </Box>
                       <Box className='right-profile' >
-                        <Typography component="h6" variant="h5" className="earnings success">+ $450</Typography>
+                        <Typography component="h5" variant="h5" className="earnings success">+ $450</Typography>
                       </Box>
                     </Box>
                   </Box>
@@ -173,7 +173,7 @@ export default function Dashboard() {
               <Grid item xs={12} lg={7} >
                 <Card className='report-cards' elevation={0}>
                   <Box className="card-heading">
-                    <Typography component="h6" variant="h5" className='card-head'>Table </Typography>
+                    <Typography component="h5" variant="h5" className='card-head'>Table </Typography>
                     <Button  className="views">View more</Button>
                   </Box>
                   <Box className="table-responsive">
@@ -515,7 +515,7 @@ export default function Dashboard() {
               <Grid item xs={12} lg={5} >
                 <Card className='report-cards' elevation={0}>
                   <Box className="card-heading">
-                    <Typography component="h6" variant="h5" className='card-head'>Sales by Locations </Typography>
+                    <Typography component="h5" variant="h5" className='card-head'>Sales by Locations </Typography>
                     <Button className="views" >View more</Button>
                   </Box>
                   <Box className='map-img' >
@@ -523,22 +523,22 @@ export default function Dashboard() {
                   </Box>
                   <Box className='map-stats' >
                     <Box className='country-stats' >
-                      <Typography component="h6" variant="body1" className='country'>USA </Typography>
-                      <Typography component="h6" variant="body1" className='country'>75% </Typography>
+                      <Typography component="p" variant="h6" className='country'>USA </Typography>
+                      <Typography component="span" variant="h6" className='country'>75% </Typography>
                     </Box>
                     <Box marginBottom="24px">
                       <Slider defaultValue={75} aria-label="Large" valueLabelDisplay="auto"  />
                     </Box>
                     <Box className='country-stats' >
-                      <Typography component="h6" variant="body1" className='country'>India </Typography>
-                      <Typography component="h6" variant="body1" className='country'>86% </Typography>
+                      <Typography component="p" variant="h6" className='country'>India </Typography>
+                      <Typography component="span" variant="h6" className='country'>86% </Typography>
                     </Box>
                     <Box marginBottom="24px">
                       <Slider defaultValue={86} aria-label="Large" valueLabelDisplay="auto"  />
                     </Box>
                     <Box className='country-stats' >
-                      <Typography component="h6" variant="body1" className='country'>Russia </Typography>
-                      <Typography component="h6" variant="body1" className='country'>62% </Typography>
+                      <Typography component="p" variant="h6" className='country'>Russia </Typography>
+                      <Typography component="span" variant="h6" className='country'>62% </Typography>
                     </Box>
                     <Box >
                       <Slider defaultValue={62} aria-label="Large" valueLabelDisplay="auto"  />

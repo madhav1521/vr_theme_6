@@ -23,7 +23,7 @@ export const pic_2 = require ("./pic-2.png")
 export const pic_3 = require ("./pic-3.png")
 export const pic_4 = require ("./pic-4.png")
 
-export const key = require ("./key.svg").default
+export const key = require ("./key.svg").default 
 export const product = require ("./pro-chart.svg").default
 export const wallet = require ("./wallet.svg").default
 export const coin = require ("./coin-stack.svg").default

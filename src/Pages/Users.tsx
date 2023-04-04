@@ -1,4 +1,4 @@
-import { Box, Button, Card, Checkbox, FormControl, FormControlLabel, Grid, IconButton, Input, InputAdornment, InputLabel, Radio, RadioGroup, Stack, TextField, Typography } from "@mui/material";
+import { Alert, Box, Button, Card, Checkbox, Collapse, FormControl, FormControlLabel, Grid, IconButton, Input, InputAdornment, InputLabel, MenuItem, Radio, RadioGroup, Select, SelectChangeEvent, Stack, TextField, Typography } from "@mui/material";
 import React from "react";
 import Sidebar from "../Components/Sidebar";
 import Header from "../Components/Header";
@@ -6,24 +6,8 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { error, info, upload_icon, valid, warn } from "../Assets/Images/image";
 import BasicTabs from "../Components/BasicTabs";
-const currencies = [
-  {
-    value: 'USD',
-    label: 'dollar',
-  },
-  {
-    value: 'EUR',
-    label: 'Euro',
-  },
-  {
-    value: 'BTC',
-    label: 'Bitcoin',
-  },
-  {
-    value: 'Ruppee',
-    label: 'Ruppee',
-  },
-];
+import CloseIcon from '@mui/icons-material/Close';
+
 export default function Users() {
   const navigate = useNavigate();
   const [showPassword1, setShowPassword1] = React.useState(false);
@@ -37,7 +21,21 @@ export default function Users() {
     event.preventDefault();
   };
 
-  // const navigate = useNavigate();
+  const [age1, setAge1] = React.useState("");
+  const [age2, setAge2] = React.useState("");
+  const [age3, setAge3] = React.useState("");
+
+  const handleChange1 = (event: SelectChangeEvent) => {
+    setAge1(event.target.value as string);
+  };
+  const handleChange2 = (event: SelectChangeEvent) => {
+    setAge2(event.target.value as string);
+  };
+  const handleChange3 = (event: SelectChangeEvent) => {
+    setAge3(event.target.value as string);
+  };
+
+  const [open, setOpen] = React.useState(true);
   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
@@ -57,34 +55,36 @@ export default function Users() {
               {/* page-heading
               ------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} >
-                <Typography component="h3" variant='h4' className='page-title'>Users</Typography>
+                <Typography component="h3" variant='h3' className='page-title'>Users</Typography>
               </Grid>
               <Grid item xs={12} >
                 <Card elevation={0} className="inner-content">
                   {/* One Column
                   ------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h3" variant='body1' className='inner-head'>One Column</Typography>
+                  <Typography component="h5" variant='h5' className='inner-head'>One Column</Typography>
 
                   <Grid container spacing={3}>
                     <Grid item xs={12}>
                       <TextField label="Username" variant="standard" type="text" autoFocus className="" />
                     </Grid>
                     <Grid item xs={12}>
-                      <TextField
-                        id="standard-select-currency-native"
-                        select
-                        label="Drop Down"
-                        defaultValue="Euro"
-                        SelectProps={{ native: true, }}
-                        // helperText="Please select your currency"
-                        variant="standard"
-                      >
-                        {currencies.map((option) => (
-                          <option key={option.value} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </TextField>
+                      <FormControl variant="standard" fullWidth>
+                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          value={age1}
+                          onChange={handleChange1}
+                          label="Dropdown"
+                          fullWidth
+                          className="inner-select text"
+                        >
+                          <MenuItem value={10}>India</MenuItem>
+                          <MenuItem value={7}>America</MenuItem>
+                          <MenuItem value={8}>Africa</MenuItem>
+                          <MenuItem value={9}>China</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
                     <Grid item xs={12}>
                       <TextField
@@ -92,7 +92,6 @@ export default function Users() {
                         label="Multiline"
                         multiline
                         rows={3}
-                        defaultValue="Default Value"
                         variant="standard"
                         className="multiline-text"
                       />
@@ -100,11 +99,11 @@ export default function Users() {
                   </Grid>
                   {/* Two Column
                   ------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h3" variant='body1' className='inner-head'>Two Column</Typography>
+                  <Typography component="h5" variant='h5' className='inner-head'>Two Column</Typography>
 
-                  <Grid container rowSpacing={4} columnSpacing={4}>
+                  <Grid container rowSpacing={3} columnSpacing={4}>
                     <Grid item xs={12} sm={6}>
-                      <TextField label="Username" variant="standard" type="text" autoFocus className="" />
+                      <TextField label="Username" variant="standard" type="text" className="" />
                     </Grid>
                     <Grid item xs={12} sm={6} >
                       <FormControl variant="standard">
@@ -152,11 +151,11 @@ export default function Users() {
 
                   {/* Three Column
                   ------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h3" variant='body1' className='inner-head'>Three Column</Typography>
+                  <Typography component="h5" variant='h5' className='inner-head'>Three Column</Typography>
 
-                  <Grid container spacing={4}>
+                  <Grid container rowSpacing={3} columnSpacing={4}>
                     <Grid item xs={12} md={4}>
-                      <TextField label="Focus" variant="standard" type="text" autoFocus className="" />
+                      <TextField label="Focus" variant="standard" type="text" className="" />
                     </Grid>
                     <Grid item xs={12} md={4}>
                       <TextField
@@ -168,34 +167,36 @@ export default function Users() {
                       />
                     </Grid>
                     <Grid item xs={12} md={4}>
-                      <TextField
-                        id="standard-select-currency-native"
-                        select
-                        label="Drop Down"
-                        defaultValue="Euro"
-                        SelectProps={{ native: true, }}
-                        // helperText="Please select your currency"
-                        variant="standard"
-                      >
-                        {currencies.map((option) => (
-                          <option key={option.value} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </TextField>
+                      <FormControl variant="standard" fullWidth>
+                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          value={age2}
+                          onChange={handleChange2}
+                          label="Dropdown"
+                          fullWidth
+                          className="inner-select text"
+                        >
+                          <MenuItem value={10}>India</MenuItem>
+                          <MenuItem value={7}>America</MenuItem>
+                          <MenuItem value={8}>Africa</MenuItem>
+                          <MenuItem value={9}>China</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
                   </Grid>
 
                   {/* Fourth Column
                   ------------------------------------------------------------------------------------------------------------------- */}
 
-                  <Typography component="h3" variant='body1' className='inner-head'>Four Column</Typography>
+                  <Typography component="h5" variant='h5' className='inner-head'>Four Column</Typography>
 
-                  <Grid container rowSpacing={4} columnSpacing={4}>
-                    <Grid item xs={12} sm={6} md={3}>
-                      <TextField label="Username" variant="standard" type="text" autoFocus className="" />
+                  <Grid container rowSpacing={3} columnSpacing={4}>
+                    <Grid item xs={12} sm={6} lg={3}>
+                      <TextField label="Username" variant="standard" type="text" className="" />
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                       <FormControl variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
                         <Input
@@ -216,24 +217,26 @@ export default function Users() {
                         />
                       </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
-                      <TextField
-                        id="standard-select-currency-native"
-                        select
-                        label="Drop Down"
-                        defaultValue="Euro"
-                        SelectProps={{ native: true, }}
-                        // helperText="Please select your currency"
-                        variant="standard"
-                      >
-                        {currencies.map((option) => (
-                          <option key={option.value} value={option.value}>
-                            {option.label}
-                          </option>
-                        ))}
-                      </TextField>
+                    <Grid item xs={12} sm={6} lg={3}>
+                      <FormControl variant="standard" fullWidth>
+                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <Select
+                          labelId="demo-simple-select-standard-label"
+                          id="demo-simple-select-standard"
+                          value={age3}
+                          onChange={handleChange3}
+                          label="Dropdown"
+                          fullWidth
+                          className="inner-select text"
+                        >
+                          <MenuItem value={11}>India</MenuItem>
+                          <MenuItem value={1}>America</MenuItem>
+                          <MenuItem value={2}>Africa</MenuItem>
+                          <MenuItem value={3}>China</MenuItem>
+                        </Select>
+                      </FormControl>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={3}>
+                    <Grid item xs={12} sm={6} lg={3}>
                       <Box
                         component="form"
                         noValidate
@@ -255,10 +258,10 @@ export default function Users() {
                   </Grid>
                   {/* Design elements starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h4" variant="h5" className="inner-heading">
+                  <Typography component="h5" variant="h5" className="inner-head">
                     Other Design Elements
                   </Typography>
-                  <Typography component="h4" variant="h6" className="card-head inner-head file-upload">
+                  <Typography component="h6" variant="h6" className=" file-upload inner-subhead">
                     File Upload
                   </Typography>
 
@@ -267,11 +270,11 @@ export default function Users() {
                       <img src={upload_icon} alt="upload files" /> &nbsp; Upload
                       <input hidden accept="image/*" multiple type="file" />
                     </Button>
-                    <Typography component="h4" variant="h6" className=" nis">
+                    <Typography component="span" variant="body2" className=" nis">
                       No item Selected
                     </Typography>
                   </Stack>
-                  <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="31px">
+                  <Typography component="h6" variant="h6" className="option-head inner-subhead" marginTop="31px">
                     Check Box
                   </Typography>
                   <Grid item xs={12}>
@@ -289,7 +292,7 @@ export default function Users() {
                       label="&nbsp;Not yet Selected"
                     />
                   </Grid>
-                  <Typography component="h4" variant="h5" className="card-head inner-head option-head" marginTop="38px">
+                  <Typography component="h6" variant="h6" className="option-head inner-subhead" marginTop="38px">
                     Radio Button
                   </Typography>
 
@@ -308,7 +311,7 @@ export default function Users() {
 
                   {/* Snackbar starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h4" variant="h5" className="card-head inner-head" marginTop="31px">
+                  <Typography component="h6" variant="h6" className="snackbar-head inner-subhead" marginTop="31px">
                     Snackbar
                   </Typography>
                   <Grid container rowSpacing={3} columnSpacing={4} className="validation-notes">
@@ -317,12 +320,14 @@ export default function Users() {
                         <img src={error} alt="" />
                         <Typography component="h6" variant="body2" className=' error-ic'>This is an error Message</Typography>
                       </Box>
+
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <Box className="text-message text-info">
                         <img src={info} alt="" />
                         <Typography component="h6" variant="body2" className=' info-ic'>This is an information message!</Typography>
                       </Box>
+                     
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <Box className="text-message text-warn">
@@ -337,20 +342,20 @@ export default function Users() {
                       </Box>
                     </Grid>
                   </Grid>
-                  <Typography component="h4" variant="h5" className="card-head inner-head">
+                  <Typography component="h6" variant="h6" className="cta inner-subhead">
                     CTA
                   </Typography>
                   <Box className="prim-sec">
                     <Button type="submit" disableElevation variant="contained" className="primary-btn" onClick={() => { navigate("/"); }} >
                       Primary
                     </Button>
-                    <Button className="secondary-btn" variant="outlined" onClick={() => { navigate("/"); }} >
+                    <Button type="submit" disableElevation variant="outlined" className="secondary-btn" onClick={() => { navigate("/"); }} >
                       Secondary
                     </Button>
                   </Box>
                   {/* Tabs starts
               ------------------------------------------------------------------------------------------------------------------------------- */}
-                  <Typography component="h4" variant="h5" className="card-head inner-head">
+                  <Typography component="h5" variant="h5" className="inner-head">
                     Tabs
                   </Typography>
                   <BasicTabs />
