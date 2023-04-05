@@ -18,7 +18,7 @@ const purple = "#F6EFFF";
 const peach = "#FFF0E9";
 const orange = "#FFE4E4";
 const danger = '#FFFAFA';
-const primaryHover = '#10704626';
+const primaryHover = '#59b9972e';
 const primaryHoverDark = '#338e6fe6';
 
 
@@ -43,10 +43,11 @@ export const mobileTheme = createTheme({
       color: secondaryMain,
       fontWeight: "500",
       marginBottom: "12px",
-      "@media (max-width:599px)": {
-        fontSize: "38px",
+      "@media (max-width:899px)": {
+        fontSize: "39px",
         fontWeight: "500",
-        lineHeight: "42px",
+        lineHeight: "45px",
+        marginBottom: "10px",
       },
     },
     h2: {
@@ -73,10 +74,10 @@ export const mobileTheme = createTheme({
       color: secondary,
       fontWeight: "400",
       textTransform: "capitalize",
-      "@media (max-width:899px)": {
-        fontSize: "26px",
-        lineHeight: "32px",
-      },
+      // "@media (max-width:899px)": {
+      //   fontSize: "26px",
+      //   lineHeight: "32px",
+      // },
     },
     h6: {
       fontSize: "18px",
@@ -101,21 +102,29 @@ export const mobileTheme = createTheme({
     MuiGrid: {
       styleOverrides: {
         root: {
-          "@media (max-width:899px)": {
-            "&.validation-notes .MuiGrid-item:nth-child(2)": {
-              paddingLeft: "15px",
-            },
-            "&.validation-notes .MuiGrid-item:nth-child(4)": {
-              paddingLeft: "15px",
-            },
+          ".alert &.MuiGrid-item &.MuiCollapse-root":{
+            display:"none",
+            // overflow:"visible",
           },
+          // "@media (max-width:899px)": {
+          //   "&.validation-notes .MuiGrid-item:nth-child(2)": {
+          //     paddingLeft: "15px",
+          //   },
+          //   "&.validation-notes .MuiGrid-item:nth-child(4)": {
+          //     paddingLeft: "15px",
+          //   },
+          // },
           "@media (max-width:599px)": {
-            "&.validation-notes .MuiGrid-item:nth-child(2)": {
-              paddingLeft: "32px",
-            },
-            "&.validation-notes .MuiGrid-item:nth-child(4)": {
-              paddingLeft: "32px",
-            },
+            // "&.validation-notes .MuiGrid-item:nth-child(2)": {
+            //   paddingLeft: "32px",
+            // },
+            // "&.validation-notes .MuiGrid-item:nth-child(4)": {
+            //   paddingLeft: "32px",
+            // },
+            "&.MuiGrid-root>.MuiGrid-item":{
+              // paddingLeft:"16px",
+              paddingTop:"16px",
+            }
           },
 
         },
@@ -124,6 +133,10 @@ export const mobileTheme = createTheme({
     MuiTypography: {
       styleOverrides: {
         root: {
+          "&.page-title":{
+            width:"100%",
+            paddingBottom:"24px"
+          },
           "&.nis": {
             fontSize: "15px",
             fontWeight: "400",
@@ -137,26 +150,29 @@ export const mobileTheme = createTheme({
             lineHeight: "25px",
             color: secondaryMain,
             marginBottom: "17px",
+            "@media (max-width:899px)": {
+              fontWeight: "400",
+              marginBottom: "20px",
+            },
           },
           "&.reg-here": {
             textAlign: "center",
             color: secondaryMain,
           },
           "&.copy-left": {
-            position: "absolute",
-            bottom: "0px",
-            left: "0",
             fontSize: "15px",
             fontWeight: "400",
             color: white,
+            padding: "24px 24px 50px 70px",
           },
-          "&.copy-right": {
-            fontSize: "15px",
-            fontWeight: "400",
-            color: secondaryLight,
-            position: "absolute",
-            bottom: "0px",
-            right: "0px",
+          "&.copy-left-right": {
+            display:"none",
+            "@media (max-width:899px)": {
+              display:"block",
+              fontSize: "15px",
+              fontWeight: "400",
+              color: secondaryLight,
+            },
           },
           "&.text-default": {
             fontSize: "15px",
@@ -237,6 +253,22 @@ export const mobileTheme = createTheme({
           },
           "&.failure": {
             color: "#FF3232",
+          },
+          "&.tab-text":{
+            fontSize: "15px",
+            fontWeight: "400",
+            lineHeight: "20px",
+            color: secondary,
+            "@media (max-width:599px)":{
+              fontSize: "13px",
+              lineHeight: "16px",
+            },
+          },
+          "&.text-message":{
+            fontSize:"15px",
+            fontWeight:"400",
+            lineHeight:"18px",
+            paddingLeft:"10px",
           },
         },
       },
@@ -326,15 +358,6 @@ export const mobileTheme = createTheme({
     MuiLink: {
       styleOverrides: {
         root: {
-          "&:hover": {
-            color: black,
-          },
-          "&:focus": {
-            color: black,
-          },
-          "&:active": {
-            color: black,
-          },
           "&.fp": {
             fontSize: "15px",
             fontWeight: "400",
@@ -349,6 +372,38 @@ export const mobileTheme = createTheme({
             color: primary,
             textDecoration: "none",
             textTransform: "uppercase",
+          },
+          ".copy-right &.MuiLink-root": {
+            fontSize: "15px",
+            fontWeight: "400",
+            color: secondaryLight,
+            textDecoration:"none",
+            // textTransform: "capitalize",
+            "&:hover": {
+              color: black,
+            },
+            "&:focus": {
+              color: black,
+            },
+            "&:active": {
+              color: black,
+            },
+          },
+          ".copy-right &.tnc ": {
+            margin:"0px 24px",
+            textDecoration: "none",
+             "@media (max-width:599px)": {
+                margin:"0px 10px",
+              },
+          },
+          "&:hover": {
+            color: black,
+          },
+          "&:focus": {
+            color: black,
+          },
+          "&:active": {
+            color: black,
           },
 
         },
@@ -382,9 +437,11 @@ export const mobileTheme = createTheme({
             "&:active": {
               borderColor: primary,
             },
-            // "@media (max-width:599px)": {
-            //   padding:"7px 9px",
-            // },
+            "@media (max-width:599px)": {
+              padding:"7px 9px",
+              minWidth:"40px",
+              height:"40px",
+            },
           },
           ".upload-content &.MuiButton-root": {
             fontSize: "15px",
@@ -411,25 +468,22 @@ export const mobileTheme = createTheme({
             "@media (max-width:1199px)": {
               margin: "0 10px",
             },
+            "@media (max-width:599px)": {
+              padding:"7px 9px",
+              minWidth:"40px",
+              height:"40px",
+            },
           },
           "&.search-btn": {
             display: "none",
             "@media (max-width:899px)": {
               display: "flex",
-              padding: "13.5px 16px",
-              border: "1px solid" + whiteLight,
-              borderRadius: "10px",
               minWidth: "52px",
-              "&:hover": {
-                borderColor: primary,
-              },
-              "&:focus": {
-                borderColor: primary,
-              },
-              "&:active": {
-                borderColor: primary,
-              },
-
+            },
+            "@media (max-width:599px)": {
+              padding:"7px 9px",
+              minWidth:"40px",
+              height:"40px",
             },
           },
           "&.dots": {
@@ -453,6 +507,7 @@ export const mobileTheme = createTheme({
             margin: "0 30px",
             padding: "10px",
             position: "relative",
+            borderRadius:"10px",
             "&:hover": {
               backgroundColor: primaryHover,
             },
@@ -464,6 +519,11 @@ export const mobileTheme = createTheme({
             },
             "@media (max-width:1199px)": {
               margin: "0 10px 0 20px",
+            },
+            "@media (max-width:599px)": {
+              margin: "0 10px",
+              height: "47px",
+              minWidth:"52px",
             },
           },
           "&.btn-close-search": {
@@ -578,6 +638,13 @@ export const mobileTheme = createTheme({
         },
       },
     },
+    MuiFormControlLabel: {
+      styleOverrides: {
+        root: {
+          color:secondaryLight,
+        },
+      },
+    },
     MuiInput: {
       styleOverrides: {
         root: {
@@ -598,10 +665,16 @@ export const mobileTheme = createTheme({
           },
           ".multiline-text &.MuiInput-root": {
             height: "90px",
+            // background:"url()"
           },
           "&.Mui-disabled":{
             "&:before":{
               borderBottom: "1px dashed" + grey,
+            },
+        },
+          "&.Mui-error":{
+            "&:after":{
+              borderBottom: "1px dashed #ff3232" ,
             },
         },
         },
@@ -645,12 +718,77 @@ export const mobileTheme = createTheme({
         },
       },
     },
+    MuiCollapse:{
+      styleOverrides:{
+        root:{
+          // ".alert &.MuiCollapse-root":{
+          //   display:"none",
+          // },
+          // overflow:"none",
+          // visibility:"hidden",
+        },
+        hidden:{
+          // overflow:"hidden",
+          // ".alert &.MuiCollapse-hidden":{
+          //   display:"none",
+          // },
+        },
+        wrapper:{
+          // ".alert &.MuiCollapse-hidden &.MuiCollapse-wrapper":{
+          //   display:"none",
+          // },
+        },
+      },
+    },
     MuiAlert: {
       styleOverrides: {
         icon: {
           display: "none",
         },
-      }
+        action:{
+          margin:0,
+        },
+        root:{
+          padding: "6px",
+          // minHeight: "45px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent:"space-between",
+          background:"transparent",
+          "&.text-danger":{
+            color:"#FF3535",
+            backgroundColor:"#FFFAFA",
+            borderRadius: "5px", 
+            border: "1px solid #FF3535",
+            // height:"45px",
+          },
+          "&.text-info":{
+            color:"#37DBFF",
+            backgroundColor:"#F3FDFF",
+            borderRadius: "5px", 
+            border: "1px solid #37DBFF",
+            // height:"45px",
+          },
+          "&.text-warn":{
+            color:"#FFC737",
+            backgroundColor:"#FFFCF5",
+            borderRadius: "5px", 
+            border: "1px solid #FFC737",
+            // height:"45px",
+          },
+          "&.text-success":{
+            color:"#65FF87",
+            backgroundColor:"#F5FFF8",
+            borderRadius: "5px", 
+            border: "1px solid #65FF87",
+            // height:"45px",
+          },
+        },
+        message:{
+          alignItems:"center",
+          display:"flex",
+        },
+      },
     },
     MuiTabs: {
       styleOverrides: {
@@ -719,6 +857,9 @@ export const mobileTheme = createTheme({
             },
             "&:active": {
               fontWeight: "500",
+            },
+            "@media (max-width:599px)":{
+              marginRight:"15px",
             },
           },
           "&.tabs.Mui-selected": {

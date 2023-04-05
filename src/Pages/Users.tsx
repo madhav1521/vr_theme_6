@@ -35,7 +35,10 @@ export default function Users() {
     setAge3(event.target.value as string);
   };
 
-  const [open, setOpen] = React.useState(true);
+  const [open1, setOpen1] = React.useState(true);
+  const [open2, setOpen2] = React.useState(true);
+  const [open3, setOpen3] = React.useState(true);
+  const [open4, setOpen4] = React.useState(true);
   // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);
@@ -51,12 +54,12 @@ export default function Users() {
         <Box className="dash-content">
           <Sidebar />
           <Box className="wrapper-content">
+            <Typography component="h3" variant='h3' className='page-title'>Users</Typography>
             <Grid container spacing={3}>
               {/* page-heading
               ------------------------------------------------------------------------------------------------------------------- */}
-              <Grid item xs={12} >
-                <Typography component="h3" variant='h3' className='page-title'>Users</Typography>
-              </Grid>
+              {/* <Grid item xs={12} > */}
+              {/* </Grid> */}
               <Grid item xs={12} >
                 <Card elevation={0} className="inner-content">
                   {/* One Column
@@ -69,13 +72,13 @@ export default function Users() {
                     </Grid>
                     <Grid item xs={12}>
                       <FormControl variant="standard" fullWidth>
-                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <InputLabel id="demo-simple-select-standard-label">Drop Down</InputLabel>
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
                           value={age1}
                           onChange={handleChange1}
-                          label="Dropdown"
+                          label="Drop Down"
                           fullWidth
                           className="inner-select text"
                         >
@@ -89,7 +92,7 @@ export default function Users() {
                     <Grid item xs={12}>
                       <TextField
                         id="standard-multiline-static"
-                        label="Multiline"
+                        label="Multiple line"
                         multiline
                         rows={3}
                         variant="standard"
@@ -139,7 +142,7 @@ export default function Users() {
                           error
                           fullWidth
                           id="outlined-error-helper-text"
-                          label="Designation"
+                          label="Error"
                           defaultValue="Web Designer"
                           // helperText="Enter Valid data"
                           variant="standard"
@@ -168,13 +171,13 @@ export default function Users() {
                     </Grid>
                     <Grid item xs={12} md={4}>
                       <FormControl variant="standard" fullWidth>
-                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <InputLabel id="demo-simple-select-standard-label">Drop Down</InputLabel>
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
                           value={age2}
                           onChange={handleChange2}
-                          label="Dropdown"
+                          label="Drop Down"
                           fullWidth
                           className="inner-select text"
                         >
@@ -219,13 +222,13 @@ export default function Users() {
                     </Grid>
                     <Grid item xs={12} sm={6} lg={3}>
                       <FormControl variant="standard" fullWidth>
-                        <InputLabel id="demo-simple-select-standard-label">Dropdown</InputLabel>
+                        <InputLabel id="demo-simple-select-standard-label">Drop Down</InputLabel>
                         <Select
                           labelId="demo-simple-select-standard-label"
                           id="demo-simple-select-standard"
                           value={age3}
                           onChange={handleChange3}
-                          label="Dropdown"
+                          label="Drop Down"
                           fullWidth
                           className="inner-select text"
                         >
@@ -247,7 +250,7 @@ export default function Users() {
                           error
                           fullWidth
                           id="outlined-error-helper-text"
-                          label="Designation"
+                          label="Error"
                           defaultValue="Web Designer"
                           // helperText="Enter Valid data"
                           variant="standard"
@@ -315,30 +318,99 @@ export default function Users() {
                     Snackbar
                   </Typography>
                   <Grid container rowSpacing={3} columnSpacing={4} className="validation-notes">
-                    <Grid item xs={12} sm={6}>
-                      <Box className="text-message text-danger">
-                        <img src={error} alt="" />
-                        <Typography component="h6" variant="body2" className=' error-ic'>This is an error Message</Typography>
+                    <Grid className = "alert" item xs={12} md={6}>
+                      <Box className = "alert">
+                        <Collapse in={open1}>
+                          <Alert className="text-danger"
+                            action={
+                              <IconButton
+                              aria-label="close"
+                              color="inherit"
+                              size="small"
+                              onClick={() => {
+                                setOpen1(false);
+                              }}
+                              >
+                                <CloseIcon fontSize="inherit" />
+                              </IconButton>
+                            }
+                          >
+                            <img src={error} alt="" />
+                            <Typography component="p" variant="body2" className='text-message error-ic' >This is an error Message</Typography>
+                          </Alert>
+                        </Collapse>
+                        
                       </Box>
 
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Box className="text-message text-info">
-                        <img src={info} alt="" />
-                        <Typography component="h6" variant="body2" className=' info-ic'>This is an information message!</Typography>
+                    <Grid item xs={12} md={6}>
+                      <Box>
+                        <Collapse in={open2}>
+                          <Alert className="text-info"
+                            action={
+                              <IconButton
+                              aria-label="close"
+                              color="inherit"
+                              size="small"
+                              onClick={() => {
+                                setOpen2(false);
+                              }}
+                              >
+                                <CloseIcon fontSize="inherit" />
+                              </IconButton>
+                            }
+                          >
+                            <img src={info} alt="" />
+                            <Typography component="p" variant="body2" className='text-message info-ic'>This is an information message!</Typography>
+                          </Alert>
+                        </Collapse>
                       </Box>
-                     
+
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Box className="text-message text-warn">
-                        <img src={warn} alt="" />
-                        <Typography component="h6" variant="body2" className=' warn-ic'>This is a warning message!</Typography>
+                    <Grid className = "alert" item xs={12} md={6}>
+                      <Box className = "alert">
+                        <Collapse in={open3}>
+                          <Alert className="text-warn"
+                            action={
+                              <IconButton
+                              aria-label="close"
+                              color="inherit"
+                              size="small"
+                              onClick={() => {
+                                setOpen3(false);
+                              }}
+                              >
+                                <CloseIcon fontSize="inherit" />
+                              </IconButton>
+                            }
+                          >
+                            <img src={warn} alt="" />
+                            <Typography component="p" variant="body2" className='text-message warn-ic'>This is a warning message!</Typography>
+                          </Alert>
+                        </Collapse>
                       </Box>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                      <Box className="text-message text-success">
-                        <img src={valid} alt="" />
-                        <Typography component="h6" variant="body2" className=' valid-ic'>This is an Success message!</Typography>
+                    <Grid item xs={12} md={6}>
+                      <Box >
+                        <Collapse in={open4}>
+                          <Alert className="text-success"
+                            action={
+                              <IconButton
+                              aria-label="close"
+                              color="inherit"
+                              size="small"
+                              onClick={() => {
+                                setOpen4(false);
+                              }}
+                              >
+                                <CloseIcon fontSize="inherit" />
+                              </IconButton>
+                            }
+                          >
+                            <img src={valid} alt="" />
+                            <Typography component="p" variant="body2" className='text-message valid-ic'>This is an Success message!</Typography>
+                          </Alert>
+                        </Collapse>
                       </Box>
                     </Grid>
                   </Grid>

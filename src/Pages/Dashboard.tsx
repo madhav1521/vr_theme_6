@@ -40,12 +40,12 @@ export default function Dashboard() {
         <Box className="dash-content">
           <Sidebar />
           <Box className="wrapper-content">
-            <Grid container spacing={3}>
+              <Typography component="h3" variant='h3' className='page-title'>Dashboard</Typography>
+            <Grid container spacing-xs-3 spacing ={4}>
               {/* page-heading
               ------------------------------------------------------------------------------------------------------------------- */}
-              <Grid item xs={12} >
-                <Typography component="h3" variant='h3' className='page-title'>Dashboard</Typography>
-              </Grid>
+              {/* <Grid item xs={12} > */}
+              {/* </Grid> */}
               {/* card
               ------------------------------------------------------------------------------------------------------------------- */}
               <Grid item xs={12} sm={6} md={3} >
