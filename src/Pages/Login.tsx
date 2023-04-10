@@ -43,50 +43,24 @@ export default function Login() {
   };
   return (
     <>
-      {/* <React.Fragment>
-        <CssBaseline /> */}
       <Box className="login-container">
         <Box className="section">
-          {/* <Container maxWidth="xl" className="container"> */}
-
-          {/* <Grid container maxWidth="xl" > */}
-          {/* <Grid item xs={12} md className="left-grid"> */}
-          {/* <Box > */}
-          <Box className="cmp-heading">
+          <Link href="#" title="company-logo" className="company-heading">
             <img src={brand_logo} alt="logo" className="logo" />
-          </Box>
-          {/* </Grid> */}
-          {/* <Grid item xs={12} md > */}
-          {/* <Box className="login-left"> */}
-            <img src={hero_image} alt="hero-image" className="login-left" />
-          {/* </Box> */}
-          <Typography variant="body1" component="h6" className="copy-left ">
+          </Link>
+            <img src={hero_image} alt="hero-image" className="hero-image" />
+          <Typography variant="body1" component="h6" className="copyright-desktop ">
                   © 2021 Company. All Rights Reserved.
           </Typography>
         </Box>
-        {/* </Grid> */}
-        {/* <Box className="footer"> */}
-        {/* <Grid item xs={12} md={12}>
-                <Typography variant="body1" component="h6" className="copy-left copyright">
-                  © 2021 Company. All Rights Reserved.
-                </Typography>
-                </Grid> */}
-        {/* <Typography variant="body1" component="h6" className="copy-left copyright">
-                  Privacy Policy        Terms and Condition        Help
-                </Typography> */}
-        {/* </Box> */}
-        {/* </Grid> */}
 
-
-
-        {/* <Grid item xs={12} md alignItems="center" justifyContent="end" display="flex" className="right-grid"> */}
-        <Box className='aside' >
-          <Box className="login-right">
+        <Box className='login-page' >
+          <Box className="login-form">
             <img src={colored_logo} alt="brand" className="colored-brand" />
             <Typography variant="h1" component="h1" className="login-heading">
               Welcome Back!
             </Typography>
-            <Typography variant="h5" component="h4" className="subheading">
+            <Typography variant="h5" component="h4" className="login-subheading">
               Login into your account
             </Typography>
 
@@ -107,7 +81,7 @@ export default function Login() {
                           onClick={handleClickShowPassword}
                           onMouseDown={handleMouseDownPassword}
                         >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                          {showPassword ? <Visibility /> :<VisibilityOff />}
                         </IconButton>
                       </InputAdornment>
                     }
@@ -116,12 +90,12 @@ export default function Login() {
               </Grid>
             </Grid>
 
-            <Box className="check-line">
+            <Box className="forgot-line">
               <FormControlLabel
                 control={<Checkbox />}
                 label="Remember me"
               />
-              <Link href="#" className="fp">
+              <Link href="#" title="forgot password" className="forgot-password">
                 Forgot Password?
               </Link>
             </Box>
@@ -139,31 +113,19 @@ export default function Login() {
             </Button>
 
             <Typography variant="body1" component="h6" className="reg-here">
-              Don’t have an account? <Link href="#" className="sign-up">Sign up</Link>
+              Don’t have an account? <Link href="#" title="sign up here" className="sign-up">Sign up</Link>
             </Typography>
 
           </Box>
-          <Box className="copy-right ">
-            <Link href="#" className="privacy">Privacy Policy</Link>
-            <Link href="#" className="tnc">Terms and Condition</Link>
-            <Link href="#" className="help">Help</Link>
+          <Box className="policy-links ">
+            <Link href="#" title="privacy policy" className="privacy">Privacy Policy</Link>
+            <Link href="#" title="terms and conditions" className="tnc">Terms and Condition</Link>
+            <Link href="#" title="help" className="help">Help</Link>
           </Box>
-          <Typography variant="body1" component="h6" className="copy-left-right ">
+          <Typography variant="body1" component="h6" className="copyright-mobile ">
             © 2021 Company. All Rights Reserved.
           </Typography>
         </Box>
-        {/* </Grid>  */}
-
-        {/* <Grid item xs={12}> */}
-        {/* <Box className="footer"> */}
-          
-        {/* </Box> */}
-        {/* </Grid> */}
-        {/* </Grid> */}
-        {/* </Container> */}
-
-        {/* </Box> */}
-
       </Box>
     </>
   );

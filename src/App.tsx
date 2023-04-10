@@ -8,7 +8,7 @@ import Offer from "./Pages/Offer";
 import Sales from "./Pages/Sales";
 import Setting from "./Pages/Setting";
 import { ThemeProvider } from "@mui/material";
-import { mobileTheme } from "./mobileTheme";
+import { mobileTheme } from "./App.theme";
 import Users from "./Pages/Users";
 
 function App() {

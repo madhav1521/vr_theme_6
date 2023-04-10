@@ -8,9 +8,9 @@ export default function Offer() {
     <>
       <Box className="main-container">
         <Header />
-        <Box className="dash-content">
+        <Box className="wrapper-page">
           <Sidebar />
-          <Box className="wrapper-page"></Box>
+          <Box className="dash-content"></Box>
         </Box>
       </Box>
     </>
